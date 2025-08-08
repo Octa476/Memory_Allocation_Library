@@ -55,3 +55,15 @@ void *os_malloc(size_t size);
 void *os_calloc(size_t nmemb, size_t size);
 void *os_realloc(void *ptr, size_t size);
 void os_free(void *ptr);
+
+## 🛠️ Compilation and Running
+```bash
+# Compile the library
+gcc -c osmem.c -o osmem.o
+ar rcs libosmem.a osmem.o
+
+# Compile a test program that uses the library
+gcc test.c -L. -losmem -o test
+
+# Run the program
+./test
